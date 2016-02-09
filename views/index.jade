@@ -1,0 +1,51 @@
+- color = color;
+html
+  head
+    title= title
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+    link(rel="stylesheet",href="/stylesheets/main.css" )
+    script(src="/scripts/jscii.js" )
+
+  body
+    h1= short
+    h1= message
+    small
+    
+    div.content
+      div.original
+        header 
+          h3 Original image
+
+        img(src=original)
+        pre.out 
+          code.sampleurl 
+            | &lt;img src="#{original}" /&gt;
+      div.image
+        header
+          h3 Base64 image
+        img(id="jscii-element-image" src=imUrl)
+        pre.out 
+          code 
+            | &lt;img src="#{imUrl}" /&gt;
+      div.ascii#output
+        header
+          h3 ASCII image
+        pre(id="ascii-container-image" style="max-width: 100%; float: left;  font-size: #{fontsize || '9px'};letter-spacing: #{letterspacing || -'1px'}; font-weight: #{fontweight || 'bold'}; line-height: #{lineheight || '0.49'};font-family:#{font || 'courier'}")
+        pre.out 
+          code(id="codeAscii")
+
+
+    footer
+      p Made with <s>love</s> {Node, Jade & JSCII }
+    script.
+      var imgJscii = new Jscii({
+        width: #{size || 100},
+        color: #{color || true},
+        el: document.getElementById('jscii-element-image'),
+        fn: function(str) {
+          document.getElementById('ascii-container-image').innerHTML = str;
+          document.getElementById('codeAscii').textContent = '<pre style="font-size: #{fontsize || "9px"};letter-spacing: #{letterspacing || "-1px"}; font-weight: #{fontweight || "bold"}; line-height: #{lineheight || "0.49"};font-family:#{font || "courier"}">'+str+'</pre>';
+          document.querySelector('small').innerHTML = 'http://iba-url.com/?u=<span>#{original || "value"}</span>&s=<span>#{size || "value"}</span>&c=<span>#{color || "value"}</span>&fs=<span>#{fontsize || "value"}</span>&ls=<span>#{letterspacing || "value"}</span>&fw=<span>#{fontweight || "value"}</span>&lh=<span>#{lineheight || "value"}</span>&ff=<span>#{fontfamily || "value"}</span>';
+          document.querySelector('footer').style.position="relative"
+        }
+      });

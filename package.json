@@ -1,0 +1,36 @@
+{
+  "name": "I.B.A",
+  "version": "3.3.12",
+  "description": "Images to Base64 to ASCII",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "ascii": "",
+    "canvas": "1.3.10",
+    "ejs": "2.3.3",
+    "express": "4.13.3",
+    "fs": "",
+    "gm": "",
+    "querystring": "",
+    "request": "",
+    "phantom-render-stream":"",
+    "jade":""
+  },
+  "engines": {
+    "node": "5.4.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heroku/node-js-getting-started"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
+}
+
+
