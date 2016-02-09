@@ -17,16 +17,16 @@ to get the perfect ASCII image, you can pass some parameters to the URL
 `?u=<value>&s=<value>&c=<value>&fs=<value>&ls=<value>&fw=<value>&lh=<value>&ff=<value>
 `
 
-| parameters    | description         | is         | default  |
+| parameters    | description         | required   | default  |
 | ------------- |:--------------------|:----------:|:---------|
-| u             | Image url           | required   | none     |
-| c             | ascii colored or b&w| optional   | `true`   |
-| s             | ascii output size   | optional   | `100`    |
-| fs            | ascii font size     | optional   | `9px`    |
-| ls            | ascii letter spacing| optional   | `-1px`   |
-| fw            | ascii font weight   | optional   | `bold`   |
-| lh            | asii line height    | optional   | `0.49`   |
-| ff            | ascii font-family   | optional   | `courier`|
+| u             | Image url           | yes        | none     |
+| c             | ascii colored or b&w| no         | `true`   |
+| s             | ascii output size   | no         | `100`    |
+| fs            | ascii font size     | no         | `9px`    |
+| ls            | ascii letter spacing| no         | `-1px`   |
+| fw            | ascii font weight   | no         | `bold`   |
+| lh            | asii line height    | no         | `0.49`   |
+| ff            | ascii font-family   | no         | `courier`|
 
 
 ### :cow: :shit:
